@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemi Takip Sistemi</title>
+    <title>TPC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="public/images/logo.png" type="image/png">
 </head>
 <body>
     <!-- Navbar -->
@@ -55,28 +56,48 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="public/images/ship1.jpg" alt="Gemi 1">
-                    </div>
-                    <div class="card-content">
-                        <h3>Lorem Ipsum</h3>
-                        <p>when an unknown printer took a gal</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="public/images/ship2.jpg" alt="Gemi 2">
-                    </div>
-                    <div class="card-content">
-                        <h3>Lorem Ipsum</h3>
-                        <p>when an unknown printer took a gal</p>
-                    </div>
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slide active" style="background-image: url('public/images/ship1.avif')"></div>
+            <div class="slide" style="background-image: url('public/images/ship2.avif')"></div>
+            <div class="slide" style="background-image: url('public/images/ship3.avif')"></div>
+        </div>
+        
+        <div class="featured-cards">
+            <div class="featured-card">
+                <div class="featured-card-bg" style="background-image: url('public/images/ship1.jpg')"></div>
+                <div class="featured-card-content">
+                    <h3>Deniz Taşımacılığı</h3>
+                    <p>Profesyonel ekibimizle dünya çapında deniz taşımacılığı hizmetleri sunuyoruz. Güvenilir ve zamanında teslimat için bizi tercih edin.</p>
+                    <a href="#" class="featured-card-btn">Detaylı Bilgi</a>
                 </div>
             </div>
+            <div class="featured-card">
+                <div class="featured-card-bg" style="background-image: url('public/images/ship2.jpg')"></div>
+                <div class="featured-card-content">
+                    <h3>Lojistik Çözümler</h3>
+                    <p>Uçtan uca lojistik çözümlerimizle işletmenizin ihtiyaçlarını karşılıyoruz. En zorlu taşıma ihtiyaçlarınızı kolaylaştırıyoruz.</p>
+                    <a href="#" class="featured-card-btn">Detaylı Bilgi</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slider-controls">
+            <span class="control-dot active" data-slide="0"></span>
+            <span class="control-dot" data-slide="1"></span>
+            <span class="control-dot" data-slide="2"></span>
+        </div>
+        
+        <div class="slider-counter">
+            <span class="current-slide">1</span>
+            <span class="slide-separator">/</span>
+            <span class="total-slides">3</span>
+        </div>
+        
+        <div class="slider-social">
+            <a href="#" class="social-icon"><img src="public/images/instagram.png" alt="Instagram"></a>
+            <a href="#" class="social-icon"><img src="public/images/facebook.png" alt="Facebook"></a>
+            <a href="#" class="social-icon"><img src="public/images/youtube.png" alt="YouTube"></a>
         </div>
     </section>
 
