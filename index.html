@@ -15,10 +15,13 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="images/logo.png" alt="Logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo">
+            </a>
         </div>
         <div class="nav-links">
-            <a href="#" class="nav-link">Blog</a>
+            <a href="galeri.html" class="nav-link">Galeri</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
             <button class="hamburger-btn" id="hamburgerBtn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -36,7 +39,7 @@
                 <a href="hakkimizda.html" class="menu-item">Hakkımızda</a>
                 <a href="faaliyet.html" class="menu-item">Faaliyet Alanları</a>
                 <a href="galeri.html" class="menu-item">Galeri</a>
-                <a href="#" class="menu-item">İletişim</a>
+                <a href="iletisim.html" class="menu-item">İletişim</a>
             </div>
             <div class="social-links">
                 <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -54,23 +57,64 @@
             <div class="slide" style="background-image: url('images/ship3.avif')"></div>
         </div>
         
-        <div class="featured-cards">
+        <!-- Card Group 1 -->
+        <div class="featured-cards-group active" data-slide="0">
             <div class="featured-card">
                 <div class="featured-card-bg" style="background-image: url('images/ship1.jpg')"></div>
                 <div class="featured-card-content">
-                    <h3>Deniz Taşımacılığı</h3>
-                    <p>Profesyonel ekibimizle dünya çapında deniz taşımacılığı hizmetleri sunuyoruz. Güvenilir ve zamanında teslimat için bizi tercih edin.</p>
-                    <a href="#" class="featured-card-btn">Detaylı Bilgi</a>
+                    <h3>Bitumen ve Petrol Ürünleri Alım Satım & Liman Hizmetleri</h3>
+                    <a href="iletisim.html" class="featured-card-btn">Detaylı Bilgi</a>
                 </div>
             </div>
             <div class="featured-card">
                 <div class="featured-card-bg" style="background-image: url('images/ship2.jpg')"></div>
                 <div class="featured-card-content">
-                    <h3>Lojistik Çözümler</h3>
-                    <p>Uçtan uca lojistik çözümlerimizle işletmenizin ihtiyaçlarını karşılıyoruz. En zorlu taşıma ihtiyaçlarınızı kolaylaştırıyoruz.</p>
-                    <a href="#" class="featured-card-btn">Detaylı Bilgi</a>
+                    <h3>Liman Hizmetleri</h3>
+                    <a href="liman-lojistik.html" class="featured-card-btn">Detaylı Bilgi</a>
                 </div>
             </div>
+        </div>
+        
+        <!-- Card Group 2 -->
+        <div class="featured-cards-group" data-slide="1">
+            <div class="featured-card">
+                <div class="featured-card-bg" style="background-image: url('images/akaryakit.jpeg')"></div>
+                <div class="featured-card-content">
+                    <h3>Akaryakıt Taşımacılığı</h3>
+                    <a href="akaryakit-tasimaciligi.html" class="featured-card-btn">Detaylı Bilgi</a>
+                </div>
+            </div>
+            <div class="featured-card">
+                <div class="featured-card-bg" style="background-image: url('images/depolama.jpeg')"></div>
+                <div class="featured-card-content">
+                    <h3>Depolama Hizmetleri</h3>
+                    <a href="depolama-hizmetleri.html" class="featured-card-btn">Detaylı Bilgi</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card Group 3 -->
+        <div class="featured-cards-group" data-slide="2">
+            <div class="featured-card">
+                <div class="featured-card-bg" style="background-image: url('images/tesis.jpeg')"></div>
+                <div class="featured-card-content">
+                    <h3>Tesis Hakkında</h3>
+                    <a href="tesis-hakkinda.html" class="featured-card-btn">Detaylı Bilgi</a>
+                </div>
+            </div>
+            <div class="featured-card">
+                <div class="featured-card-bg" style="background-image: url('images/petrol.jpeg')"></div>
+                <div class="featured-card-content">
+                    <h3>Petrol ve Petrol Ürünleri Ticareti</h3>
+                    <a href="petrol-ticareti.html" class="featured-card-btn">Detaylı Bilgi</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="slider-navigation">
+            <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
         
         <div class="slider-controls">
@@ -123,21 +167,21 @@
                         <li><i class="fas fa-angle-right"></i> <a href="hakkimizda.html">Hakkımızda</a></li>
                         <li><i class="fas fa-angle-right"></i> <a href="faaliyet.html">Faaliyet Alanları</a></li>
                         <li><i class="fas fa-angle-right"></i> <a href="galeri.html">Galeri</a></li>
-                        <li><i class="fas fa-angle-right"></i> <a href="#">Haber</a></li>
-                        <li><i class="fas fa-angle-right"></i> <a href="#">Site Haritası</a></li>
+                        <li><i class="fas fa-angle-right"></i> <a href="iletisim.html">İletişim</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Faaliyet Alanları</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-angle-right"></i> <a href="#">Yolcu Taşımacılığı</a></li>
-                        <li><i class="fas fa-angle-right"></i> <a href="#">Araç Taşımacılığı</a></li>
-                        <li><i class="fas fa-angle-right"></i> <a href="#">Gemi Acenteliği</a></li>
-                        <li><i class="fas fa-angle-right"></i> <a href="#">Yük Taşımacılığı</a></li>
+                        <li><i class="fas fa-angle-right"></i> <a href="depolama-hizmetleri.html">Depolama hizmetleri</a></li>
+                        <li><i class="fas fa-angle-right"></i> <a href="petrol-ticareti.html">Petrol ve Petrol ürünleri ticareti</a></li>
+                        <li><i class="fas fa-angle-right"></i> <a href="akaryakit-tasimaciligi.html">Akaryakıt Taşımacılığı</a></li>
+                        <li><i class="fas fa-angle-right"></i> <a href="liman-lojistik.html">Liman ve Lojistik hizmetleri</a></li>
+                        <li><i class="fas fa-angle-right"></i> <a href="tesis-hakkinda.html">Tesis Hakkında</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>İletişim Bilgileri</h3>
+                    <h3>İletişim</h3>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
                 <div class="footer-column">

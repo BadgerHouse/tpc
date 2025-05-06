@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TPC</title>
+    <title>TPC - İletişim</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -49,37 +49,63 @@
         </div>
     </div>
 
-    <!-- About Section -->
-    <section class="hero-section about-section">
+    <!-- Contact Section -->
+    <section class="contact-section">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Faaliyet Alanları</h2>
-                    <p>
-                        Şu an Faaliyet gösterdiğimiz alanlar: Depolama Hizmetleri, Petrol ve Petrol Ürünleri Ticareti, Akaryakıt Taşımacılığı, Liman ve Lojistik Hizmetleridir.
-                    </p>
-                </div>
-                <div class="about-gallery">
-                    <div class="gallery-row">
-                        <div class="gallery-item">
-                            <img src="images/about1.jpg" alt="Gemi Resim 1">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images/about2.jpg" alt="Gemi Resim 2">
-                        </div>
+            <h1 class="contact-title">İletişim</h1>
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Ad Soyad</label>
+                        <input type="text" id="name" name="name" required>
                     </div>
-                    <div class="gallery-row">
-                        <div class="gallery-item">
-                            <img src="images/about3.jpg" alt="Gemi Resim 3">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images/about4.jpg" alt="Gemi Resim 4">
-                        </div>
+                    <div class="form-group">
+                        <label for="email">E-posta</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mesajınız</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Gönder</button>
+                </form>
             </div>
         </div>
     </section>
+
+    <div class="section-spacer"></div>
+
+    <!-- Success Popup -->
+    <div class="form-popup" id="successPopup">
+        <div class="popup-content">
+            <button class="close-btn" id="closeSuccessBtn">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="popup-icon success">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3>Mesajınız Gönderildi</h3>
+            <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
+        </div>
+    </div>
+
+    <!-- Error Popup -->
+    <div class="form-popup" id="errorPopup">
+        <div class="popup-content">
+            <button class="close-btn" id="closeErrorBtn">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="popup-icon error">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3>Hata</h3>
+            <p>Mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyiniz.</p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -106,7 +132,7 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>İletişim Bilgileri</h3>
+                    <h3>İletişim</h3>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 </div>
                 <div class="footer-column">
