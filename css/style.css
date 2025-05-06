@@ -162,7 +162,7 @@ body {
 /* Hero Section Styles */
 .hero-section {
     height: 100vh;
-    background-image: url('../public/images/hero-bg.jpg');
+    background-image: url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -448,7 +448,7 @@ body {
 
 /* Footer Styles */
 .footer {
-    background-image: url('../public/images/footer-bg.jpg');
+    background-image: url('../images/footer-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
