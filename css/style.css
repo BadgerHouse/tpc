@@ -139,24 +139,33 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    background-color: transparent;
+    padding: 12px 20px;
+    border-radius: 30px;
+    display: inline-flex;
 }
 
 .social-link {
     margin: 0 0.5rem;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: rgba(15, 76, 117, 0.4);
     color: var(--light-color);
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    transition: background-color 0.3s;
+    transition: transform 0.3s;
 }
 
 .social-link:hover {
-    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.social-link img {
+    width: 24px;
+    height: 24px;
 }
 
 /* Hero Section Styles */
@@ -297,23 +306,25 @@ body {
     gap: 20px;
     z-index: 5;
     background-color: transparent;
-    padding: 10px 25px;
+    padding: 12px 30px;
     border-radius: 30px;
+    box-shadow: none;
 }
 
 .slider-social .social-icon {
-    background-color: transparent;
-    width: 40px;
-    height: 40px;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
+    border-radius: 50%;
 }
 
 .slider-social .social-icon img {
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     transition: transform 0.3s ease;
 }
 
@@ -544,22 +555,23 @@ body {
 
 .footer-social {
     display: inline-flex;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 0 20px;
+    background-color: transparent;
+    padding: 12px 30px;
     border-radius: 30px;
     position: relative;
     top: -15px;
+    box-shadow: none;
 }
 
 .social-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin: 0 5px;
+    width: 36px;
+    height: 36px;
+    margin: 0 8px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.4);
     color: var(--light-color);
     text-decoration: none;
     transition: all 0.3s ease;
@@ -567,6 +579,11 @@ body {
 
 .social-icon:hover {
     transform: translateY(-3px);
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
 }
 
 /* Responsive Styles */
