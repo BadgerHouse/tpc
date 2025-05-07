@@ -179,6 +179,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    padding-top: 70px;
 }
 
 .hero-section::before {
@@ -467,6 +468,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin-top: 0;
 }
 
 .footer::before {
@@ -665,6 +667,69 @@ body {
         align-items: center;
         width: auto;
     }
+    
+    /* Mobil Hero Section Ayarları */
+    .slider-navigation {
+        transform: translateY(700%);
+    }
+    
+    .slider-counter {
+        right: 10px;
+        bottom: 40px;
+    }
+    
+    .slider-social {
+        bottom: 80px;
+    }
+    
+    /* Genel mobil görünüm düzeltmeleri */
+    .hero-section, .about-section {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 90px;
+        padding-bottom: 2rem;
+    }
+    
+    .service-content {
+        padding-bottom: 3rem;
+    }
+    
+    .service-image {
+        height: 250px;
+        max-height: 250px;
+        aspect-ratio: 16/9;
+        margin-bottom: 2rem;
+    }
+    
+    .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .about-text {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .about-text h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* Footer öncesi boşluk */
+    .footer {
+        margin-top: 0;
+    }
+    
+    .about-section {
+        padding-top: 90px;
+    }
 }
 
 @media (max-width: 992px) and (min-width: 769px) {
@@ -700,6 +765,8 @@ body {
 .about-section {
     display: flex;
     align-items: center;
+    padding-top: 80px;
+    min-height: 100vh;
 }
 
 .about-content {
@@ -708,6 +775,7 @@ body {
     align-items: center;
     gap: 3rem;
     width: 100%;
+    padding: 2rem 0;
 }
 
 .about-text {
@@ -755,6 +823,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     height: 100%;
+    aspect-ratio: 16/9;
 }
 
 .gallery-item:hover {
@@ -766,6 +835,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -778,6 +848,7 @@ body {
 @media (max-width: 992px) {
     .about-content {
         flex-direction: column;
+        padding: 1rem 0 3rem;
     }
     
     .about-text, .about-gallery {
@@ -791,15 +862,50 @@ body {
     .gallery-row {
         height: 180px;
     }
+    
+    .about-section {
+        min-height: auto;
+        padding-bottom: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
     .gallery-row {
-        height: 140px;
+        height: auto;
+    }
+    
+    .gallery-item {
+        height: 200px;
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+    
+    .about-content {
+        padding: 1rem 0 2rem;
+    }
+    
+    .about-section {
+        padding-top: 90px;
+    }
+    
+    .about-text, .about-gallery {
+        width: 100%;
+    }
+    
+    .about-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .gallery-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
     }
 }
 
-/* Gallery Section Styles */
+/* Gallery Section Styles - Revision */
 .gallery-section {
     padding-top: 100px;
 }
@@ -833,6 +939,8 @@ body {
     transition: all 0.3s ease;
     position: relative;
     height: 100%;
+    aspect-ratio: 16/9;
+    min-width: calc(33.333% - 14px);
 }
 
 .gallery-item:hover {
@@ -844,6 +952,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -865,18 +974,30 @@ body {
 
 @media (max-width: 768px) {
     .gallery-row {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         height: auto;
         gap: 15px;
     }
     
     .gallery-item {
+        flex: 0 0 calc(50% - 8px);
         height: 200px;
+        aspect-ratio: 16/9;
+        margin-bottom: 15px;
+        min-width: 0;
     }
     
     .gallery-title {
         font-size: 2rem;
         margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-item {
+        flex: 0 0 100%;
+        margin-bottom: 15px;
     }
 }
 
@@ -1262,6 +1383,15 @@ body {
 /* Service Page Styles */
 .service-content {
     gap: 4rem;
+    margin-top: 2rem;
+}
+
+.hero-section.about-section {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 100px;
 }
 
 .service-image {
@@ -1270,12 +1400,19 @@ body {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     height: 400px;
+    max-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    aspect-ratio: 16/9;
 }
 
 .service-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -1293,12 +1430,62 @@ body {
     .service-image {
         width: 100%;
         height: 350px;
+        max-height: 350px;
         margin-top: 2rem;
+        margin-bottom: 2rem;
+        aspect-ratio: 16/9;
+        overflow: hidden;
     }
 }
 
 @media (max-width: 768px) {
+    /* Genel mobil görünüm düzeltmeleri */
+    .hero-section, .about-section {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 90px;
+        padding-bottom: 2rem;
+    }
+    
+    .service-content {
+        padding-bottom: 3rem;
+    }
+    
     .service-image {
         height: 250px;
+        max-height: 250px;
+        aspect-ratio: 16/9;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    
+    .service-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .about-text {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .about-text h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* Footer öncesi boşluk */
+    .footer {
+        margin-top: 0;
+    }
+    
+    .about-section {
+        padding-top: 90px;
     }
 } 
