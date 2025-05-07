@@ -604,13 +604,7 @@ body {
     }
     
     .nav-link {
-        display: none;
-    }
-    
-    .nav-link:nth-child(1),
-    .nav-link:nth-child(2),
-    .nav-link:nth-child(3) {
-        display: inline-block;
+        display: none !important;
     }
     
     .nav-divider {
@@ -639,6 +633,37 @@ body {
         flex: 1 1 100%;
         margin-bottom: 2.5rem;
         padding: 0 1rem;
+    }
+    
+    .logo img {
+        height: 45px;
+        max-width: 100%;
+    }
+    
+    .navbar {
+        padding: 0.8rem 1.2rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .hamburger-btn {
+        margin-left: 0;
+        font-size: 1.4rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .nav-links {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: auto;
     }
 }
 
