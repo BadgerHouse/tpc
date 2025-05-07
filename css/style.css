@@ -1488,4 +1488,219 @@ body {
     .about-section {
         padding-top: 90px;
     }
+}
+
+/* İletişim Bilgileri Stilleri */
+.contact-info-container {
+    padding: 3rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info-card {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.contact-info-card h3 {
+    color: var(--light-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info-card p {
+    color: var(--light-color);
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-info-card {
+        padding: 1.5rem;
+    }
+    
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-info-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Faaliyet Alanları Sayfası Yeni Stiller */
+.faaliyet-wrapper {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.faaliyet-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.faaliyet-header h2 {
+    color: var(--light-color);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.faaliyet-header p {
+    color: var(--light-color);
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.faaliyet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 25px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.faaliyet-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 280px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.faaliyet-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.faaliyet-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.faaliyet-item:hover img {
+    transform: scale(1.05);
+}
+
+.faaliyet-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    transition: all 0.3s ease;
+}
+
+.faaliyet-item-overlay h3 {
+    color: var(--light-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+}
+
+/* Responsive için medya sorguları */
+@media (max-width: 992px) {
+    .faaliyet-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .faaliyet-header p {
+        font-size: 1.1rem;
+    }
+    
+    .faaliyet-item {
+        height: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .faaliyet-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    .faaliyet-header h2 {
+        font-size: 2rem;
+    }
+    
+    .faaliyet-header p {
+        font-size: 1rem;
+    }
+    
+    .faaliyet-item {
+        height: 220px;
+    }
+    
+    .faaliyet-wrapper {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .faaliyet-item {
+        height: 200px;
+    }
+    
+    .faaliyet-header h2 {
+        font-size: 1.8rem;
+    }
 } 

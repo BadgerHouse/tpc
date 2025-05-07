@@ -53,57 +53,46 @@
     <section class="contact-section">
         <div class="container">
             <h1 class="contact-title">İletişim</h1>
-            <div class="contact-form-container">
-                <form id="contactForm" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Ad Soyad</label>
-                        <input type="text" id="name" name="name" required>
+            <div class="contact-info-container">
+                <div class="contact-info-grid">
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Türkiye Ofisi</h3>
+                        <p>İstanbul, Türkiye</p>
+                        <p>Telefon: +90-2128925962</p>
                     </div>
-                    <div class="form-group">
-                        <label for="email">E-posta</label>
-                        <input type="email" id="email" name="email" required>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Libya Ofisi</h3>
+                        <p>Tripoli, Libya</p>
+                        <p>Telefon: +218 91-3313537</p>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Telefon</label>
-                        <input type="tel" id="phone" name="phone" required>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>E-posta</h3>
+                        <p>info@tpc.org.tr</p>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Mesajınız</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Çalışma Saatleri</h3>
+                        <p>Hafta içi: 09:00 - 18:00</p>
+                        <p>Hafta sonu: Kapalı</p>
                     </div>
-                    <button type="submit" class="submit-btn">Gönder</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Success Popup -->
-    <div class="form-popup" id="successPopup">
-        <div class="popup-content">
-            <button class="close-btn" id="closeSuccessBtn">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="popup-icon success">
-                <i class="fas fa-check"></i>
-            </div>
-            <h3>Mesajınız Gönderildi</h3>
-            <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
-        </div>
-    </div>
-
-    <!-- Error Popup -->
-    <div class="form-popup" id="errorPopup">
-        <div class="popup-content">
-            <button class="close-btn" id="closeErrorBtn">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="popup-icon error">
-                <i class="fas fa-exclamation-triangle"></i>
-            </div>
-            <h3>Hata</h3>
-            <p>Mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyiniz.</p>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
