@@ -38,6 +38,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Logo slider işlevselliği
+    const logoSlide = document.querySelector('.logo-slide');
+    
+    if (logoSlide) {
+        // Logo için sağa sola hareket animasyonu ekle
+        let positionX = 0;
+        let moveDirection = 1; // 1: sağa doğru, -1: sola doğru
+        let rotation = 0;
+        let rotationDirection = 1; // 1: saat yönünde, -1: saat yönünün tersinde
+        
+        // Hareket aralığını ekran genişliğine göre ayarla
+        let maxMovement = 50; // Varsayılan değer, daha büyük logo için daha geniş hareket aralığı
+        
+        // Ekran genişliğine göre hareket aralığını ayarla
+        function updateMaxMovement() {
+            if (window.innerWidth <= 576) {
+                maxMovement = 20; // Mobil için daha az hareket
+            } else if (window.innerWidth <= 768) {
+                maxMovement = 30; // Tablet için orta hareket
+            } else if (window.innerWidth <= 992) {
+                maxMovement = 40; // Küçük desktop için
+            } else {
+                maxMovement = 50; // Büyük desktop için tam hareket
+            }
+        }
+        
+        // Sayfa yüklendiğinde ve yeniden boyutlandığında güncelle
+        updateMaxMovement();
+        window.addEventListener('resize', updateMaxMovement);
+        
+        function moveAndRotateLogo() {
+            // Sağa-sola hareket
+            positionX += (0.5 * moveDirection); // Hız artırıldı
+            
+            // Hareket yönünü belirli aralıklarla değiştir
+            if (positionX > maxMovement) {
+                moveDirection = -1;
+            } else if (positionX < -maxMovement) {
+                moveDirection = 1;
+            }
+            
+            // Hafif dönme efekti
+            rotation += (0.15 * rotationDirection); // Dönüş hızı artırıldı
+            
+            // Dönüş yönünü belirli aralıklarla değiştir
+            if (rotation > 4) { // Dönüş açısı artırıldı
+                rotationDirection = -1;
+            } else if (rotation < -4) {
+                rotationDirection = 1;
+            }
+            
+            logoSlide.style.transform = `translate(${positionX}px, 0) rotate(${rotation}deg)`;
+        }
+        
+        // Logo animasyon intervalini başlat - Daha hızlı animasyon için interval azaltıldı
+        setInterval(moveAndRotateLogo, 25);
+    }
+    
     // Hero slider işlevselliği
     const slides = document.querySelectorAll('.slide');
     const nextBtn = document.querySelector('.next-btn');
