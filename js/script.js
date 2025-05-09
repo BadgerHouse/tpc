@@ -4,154 +4,128 @@ document.addEventListener('DOMContentLoaded', function() {
     const popupMenu = document.getElementById('popupMenu');
     const navbar = document.querySelector('.navbar');
     
-    // Hamburger menüye tıklandığında
-    hamburgerBtn.addEventListener('click', function() {
-        popupMenu.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Scroll'u engelle
-    });
+    // Pop-up menü işlevselliği
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', function() {
+            popupMenu.classList.add('active');
+        });
+    }
     
-    // Kapat butonuna tıklandığında
-    closeBtn.addEventListener('click', function() {
-        popupMenu.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Scroll'u tekrar etkinleştir
-    });
-    
-    // Popup dışına tıklandığında kapatma
-    popupMenu.addEventListener('click', function(e) {
-        if (e.target === popupMenu) {
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
             popupMenu.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    });
+        });
+    }
     
-    // Sayfa kaydırıldığında navbar arkaplanını değiştirme
+    // Sayfa kaydırıldığında navbar'ın arkaplan rengini değiştir
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
     });
 
-    // Slider işlemleri
+    // Dil değiştirme işlevselliği
+    const flagLinks = document.querySelectorAll('.flag-link');
+
+    flagLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Eğer zaten mevcut sayfadaysa, linki engelle
+            if (window.location.href.includes(this.getAttribute('href'))) {
+                e.preventDefault();
+            }
+        });
+    });
+    
+    // Hero slider işlevselliği
     const slides = document.querySelectorAll('.slide');
+    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.prev-btn');
     const cardGroups = document.querySelectorAll('.featured-cards-group');
     const controlDots = document.querySelectorAll('.control-dot');
-    const currentSlideEl = document.querySelector('.current-slide');
-    const totalSlidesEl = document.querySelector('.total-slides');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+    const currentSlideNum = document.querySelector('.current-slide');
+    const totalSlidesNum = document.querySelector('.total-slides');
     
-    if (slides.length > 0) {
-        let currentSlide = 0;
-        const totalSlides = slides.length;
-        let sliderInterval;
-        
-        // Toplam slide sayısını güncelle
-        if (totalSlidesEl) {
-            totalSlidesEl.textContent = totalSlides;
-        }
-        
-        // Slide'ı gösterme fonksiyonu
-        function showSlide(index) {
-            // Önceki aktif slide'ı deaktif et
-            slides.forEach(slide => {
-                slide.classList.remove('active', 'prev');
-                slide.classList.add('next');
-            });
-            
-            // Yeni slide'ı aktif et
-            slides[index].classList.add('active');
-            slides[index].classList.remove('prev', 'next');
-            
-            // Önceki slide'ı işaretle
-            const prevIndex = (index - 1 + totalSlides) % totalSlides;
-            slides[prevIndex].classList.add('prev');
-            slides[prevIndex].classList.remove('active', 'next');
-            
-            // Kart gruplarını güncelle
-            cardGroups.forEach((group, i) => {
-                group.classList.toggle('active', i === index);
-            });
-            
-            // Kontrol noktalarını güncelle
-            controlDots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            
-            // Sayacı güncelle
-            if (currentSlideEl) {
-                currentSlideEl.textContent = index + 1;
-            }
-            
-            currentSlide = index;
-        }
-        
-        // Otomatik geçiş başlat
-        function startAutoSlide() {
-            sliderInterval = setInterval(() => {
-                const nextSlide = (currentSlide + 1) % totalSlides;
-                showSlide(nextSlide);
-            }, 5000); // 5 saniyede bir
-        }
-        
-        // Otomatik geçişi durdur
-        function stopAutoSlide() {
-            clearInterval(sliderInterval);
-        }
-        
-        // Önceki slide'a geç
-        function goToPrevSlide() {
-            const prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(prevSlide);
-        }
-        
-        // Sonraki slide'a geç
-        function goToNextSlide() {
-            const nextSlide = (currentSlide + 1) % totalSlides;
-            showSlide(nextSlide);
-        }
-        
-        // Navigasyon butonlarına tıklandığında
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                goToPrevSlide();
-                startAutoSlide();
-            });
-        }
-        
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                stopAutoSlide();
-                goToNextSlide();
-                startAutoSlide();
-            });
-        }
-        
-        // Kontrol noktalarına tıklanınca
-        controlDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                stopAutoSlide();
-                showSlide(index);
-                startAutoSlide();
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    
+    if (totalSlidesNum) {
+        totalSlidesNum.textContent = totalSlides;
+    }
+    
+    // Slider navigasyonu
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            changeSlide(1);
+        });
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+            changeSlide(-1);
+        });
+    }
+    
+    // Kontrol noktaları ile slide değiştirme
+    if (controlDots.length > 0) {
+        controlDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-slide'));
+                goToSlide(slideIndex);
             });
         });
+    }
+    
+    // Otomatik slide değiştirme
+    let slideInterval = setInterval(function() {
+        changeSlide(1);
+    }, 8000);
+    
+    function changeSlide(direction) {
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        goToSlide(currentSlide);
+    }
+    
+    function goToSlide(index) {
+        // Aktif slide'ı kaldır
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
         
-        // Slider'a dokununca otomatik geçişi durdur
-        const sliderContainer = document.querySelector('.slider-container');
-        if (sliderContainer) {
-            sliderContainer.addEventListener('mouseenter', stopAutoSlide);
-            sliderContainer.addEventListener('mouseleave', startAutoSlide);
-            
-            // Touch cihazlar için
-            sliderContainer.addEventListener('touchstart', stopAutoSlide);
-            sliderContainer.addEventListener('touchend', startAutoSlide);
+        // Yeni slide'ı aktif yap
+        slides[index].classList.add('active');
+        
+        // Card gruplarını güncelle
+        cardGroups.forEach(group => {
+            group.classList.remove('active');
+        });
+        
+        const activeCardGroup = document.querySelector(`.featured-cards-group[data-slide="${index}"]`);
+        if (activeCardGroup) {
+            activeCardGroup.classList.add('active');
         }
         
-        // İlk slide'ı göster ve otomatik geçişi başlat
-        showSlide(0);
-        startAutoSlide();
+        // Kontrol noktalarını güncelle
+        controlDots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        
+        const activeDot = document.querySelector(`.control-dot[data-slide="${index}"]`);
+        if (activeDot) {
+            activeDot.classList.add('active');
+        }
+        
+        // Sayaç metnini güncelle
+        if (currentSlideNum) {
+            currentSlideNum.textContent = index + 1;
+        }
+        
+        // Otomatik değiştirme zamanlayıcısını sıfırla
+        clearInterval(slideInterval);
+        slideInterval = setInterval(function() {
+            changeSlide(1);
+        }, 8000);
     }
 
     // İletişim Formu İşlevselliği
