@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const logoSlide = document.querySelector('.logo-slide');
     
     if (logoSlide) {
-        // Logo için sağa sola hareket animasyonu ekle
+        /* 
+        // Logo için sağa sola hareket animasyonu ekle - ŞİMDİLİK DURDURULDU
         let positionX = 0;
         let moveDirection = 1; // 1: sağa doğru, -1: sola doğru
         let rotation = 0;
@@ -94,6 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Logo animasyon intervalini başlat - Daha hızlı animasyon için interval azaltıldı
         setInterval(moveAndRotateLogo, 25);
+        */
+        
+        // Logo sabit kalsın
+        logoSlide.style.transform = 'translate(0, 0) rotate(0deg)';
     }
     
     // Hero slider işlevselliği
