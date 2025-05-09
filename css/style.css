@@ -1829,7 +1829,6 @@ body {
 .activity-card-btn:hover {
     background-color: var(--light-color);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Galeri sayfası düzeltmesi */
@@ -2322,6 +2321,13 @@ body {
 
 .logo-slide.active {
     opacity: 1;
+    animation: logo-pulse 3s infinite ease-in-out;
+}
+
+@keyframes logo-pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
 }
 
 .logo-slide img {
