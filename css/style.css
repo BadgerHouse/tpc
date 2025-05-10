@@ -2321,7 +2321,7 @@ body {
 
 .logo-slide.active {
     opacity: 1;
-    animation: logo-pulse 3s infinite ease-in-out;
+    /* animation: logo-pulse 3s infinite ease-in-out; */
 }
 
 @keyframes logo-pulse {
@@ -2335,6 +2335,8 @@ body {
     height: 100%;
     object-fit: contain;
     filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.5));
+    opacity: 0.3 !important;
+    animation: none !important;
 }
 
 @media (max-width: 992px) {
@@ -2394,5 +2396,84 @@ body {
     .footer-contact-left, 
     .footer-contact-right {
         width: 100%;
+    }
+}
+
+/* Facility Info Card Grid ve Kartları */
+.facility-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    margin: 2rem 0 3rem 0;
+}
+
+.facility-card {
+    background: rgba(15, 76, 117, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    padding: 1.2rem 1rem 1.2rem 1rem;
+    min-width: 200px;
+    max-width: 260px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.facility-card:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.facility-card-icon {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    margin-bottom: 0.7rem;
+}
+
+.facility-card-title {
+    color: var(--light-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.facility-card-info {
+    color: #eaf6fb;
+    font-size: 0.97rem;
+    margin-bottom: 0.2rem;
+    text-align: center;
+    word-break: break-word;
+}
+
+.facility-title {
+    color: var(--light-color);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+    .facility-card-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .facility-card {
+        min-width: 0;
+        max-width: 98vw;
+        padding: 1rem 0.5rem;
     }
 } 
