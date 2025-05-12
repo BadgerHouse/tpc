@@ -1,208 +1,1 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TPC - Activities</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo-yatay.png" alt="Logo">
-            </a>
-        </div>
-        <div class="nav-links">
-            <div class="language-flags">
-                <a href="faaliyetler.html" class="flag-link" data-lang="tr"><img src="images/tr-flag.png" alt="Türkçe" class="flag-img"></a>
-                <a href="activities.html" class="flag-link" data-lang="en"><img src="images/en-flag.png" alt="English" class="flag-img"></a>
-            </div>
-            <a href="gallery.html" class="nav-link">Gallery</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-            <button class="hamburger-btn" id="hamburgerBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Pop-up Menu -->
-    <div class="popup-menu" id="popupMenu">
-        <div class="popup-content">
-            <button class="close-btn" id="closeBtn">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="menu-items">
-                <a href="index.html" class="menu-item">Home</a>
-                <a href="about-us.html" class="menu-item">About TPC Terminal</a>
-                <a href="activities.html" class="menu-item">Fields of Activity</a>
-                <a href="gallery.html" class="menu-item">Gallery</a>
-                <a href="contact.html" class="menu-item">Contact</a>
-            </div>
-            <div class="popup-language-flags">
-                <a href="faaliyetler.html" class="flag-link" data-lang="tr"><img src="images/tr-flag.png" alt="Türkçe" class="flag-img"> Türkçe</a>
-                <a href="activities.html" class="flag-link" data-lang="en"><img src="images/en-flag.png" alt="English" class="flag-img"> English</a>
-            </div>
-            <div class="social-links">
-                <a href="#" class="social-link"><img src="images/instagram.png" alt="Instagram"></a>
-                <a href="#" class="social-link"><img src="images/facebook.png" alt="Facebook"></a>
-                <a href="#" class="social-link"><img src="images/youtube.png" alt="YouTube"></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Activities Section -->
-    <section class="hero-section about-section">
-        <div class="container">
-            <div class="faaliyet-wrapper">
-                <div class="faaliyet-header">
-                    <h2>Fields of Activity</h2>
-                </div>
-                
-                <div class="faaliyet-grid">
-                    <div class="faaliyet-item">
-                        <img src="images/depolama.jpeg" alt="Storage Services">
-                        <div class="faaliyet-item-overlay">
-                            <h3>Storage Services</h3>
-                        </div>
-                        <a href="storage-services.html" class="stretched-link"></a>
-                    </div>
-                    
-                    <div class="faaliyet-item">
-                        <img src="images/petrol.jpeg" alt="Oil and Petroleum Products Trade">
-                        <div class="faaliyet-item-overlay">
-                            <h3>Oil and Petroleum Products Trade</h3>
-                        </div>
-                        <a href="oil-trade.html" class="stretched-link"></a>
-                    </div>
-                    
-                    <div class="faaliyet-item">
-                        <img src="images/akaryakit.jpeg" alt="Fuel Transportation">
-                        <div class="faaliyet-item-overlay">
-                            <h3>Fuel Transportation</h3>
-                        </div>
-                        <a href="fuel-transportation.html" class="stretched-link"></a>
-                    </div>
-                    
-                    <div class="faaliyet-item">
-                        <img src="images/ship2.jpg" alt="Port and Logistics Services">
-                        <div class="faaliyet-item-overlay">
-                            <h3>Port and Logistics Services</h3>
-                        </div>
-                        <a href="port-logistics.html" class="stretched-link"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column footer-links-column">
-                    <div class="footer-links-section">
-                        <h3>Pages</h3>
-                        <ul class="footer-links">
-                            <li><i class="fas fa-angle-right"></i> <a href="index.html">Home</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="about-us.html">About TPC Terminal</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="activities.html">TPC Terminal Activity</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="gallery.html">Gallery</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="contact.html">Contact</a></li>  ,
-                            <li><i class="fas fa-angle-right"></i> <a href="mc1-product.html">Products</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-links-section">
-                        <h3>Fields of Activity</h3>
-                        <ul class="footer-links">
-                            <li><i class="fas fa-angle-right"></i> <a href="storage-services.html">Storage Services</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="oil-trade.html">Oil and Petroleum Products Trade</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="fuel-transportation.html">Fuel Transportation</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="port-logistics.html">Port and Logistics Services</a></li>
-                            <li><i class="fas fa-angle-right"></i> <a href="facility-info.html">About the Facility</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="footer-column footer-contact-column">
-                    <h3>Contact Information</h3>
-                    <div class="footer-contact-grid">
-                        <div class="footer-contact-left">
-                            <div class="footer-contact-item">
-                                <span class="footer-icon"><i class="fas fa-envelope" style="color: #007bff;"></i></span>
-                                <div class="footer-contact-content">
-                                    <p class="footer-highlight">Email:</p>
-                                    <p><i class="fas fa-envelope" style="color: #007bff; margin-right: 5px;"></i>info@tpc.org.tr</p>
-                                </div>
-                            </div>
-                            <div class="footer-contact-item">
-                                <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>
-                                <div class="footer-contact-content">
-                                    <p class="footer-highlight">Turkey Office:</p>
-                                    <p><i class="fas fa-map-marker-alt" style="color: #007bff; margin-right: 5px;"></i>Istanbul, Turkey</p>
-                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+90 212 892 5962</p>
-                                </div>
-                            </div>
-                            <div class="footer-contact-item">
-                                <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>
-                                <div class="footer-contact-content">
-                                    <p class="footer-highlight">Libya Office:</p>
-                                    <p><i class="fas fa-building" style="color: #007bff; margin-right: 5px;"></i>Al Buraq Holding / Marketing Dep.</p>
-                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+218 91 217 3334</p>
-                                    <p>Person In Charge: <br> Mr Ala Kilani</p>
-                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+218 91 218 8625</p>
-                                    <p>Person In Charge: <br> Mr Abugela K Elmelit</p>
-                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+218 91 212 0552</p>
-                                </div>
-                            </div>
-                            <div class="footer-contact-item">
-                                <span class="footer-icon"><i class="fas fa-anchor"></i></span>
-                                <div class="footer-contact-content">
-                                    <a href="https://www.lpclibya.com/en/?page_id=184" target="_blank" class="port-info-link">Libya Port Information <i class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-contact-right">
-                            <div class="footer-contact-item">
-                                <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>
-                                <div class="footer-contact-content">
-                                    <p class="footer-highlight">Greece Office:</p>
-                                    <p><i class="fas fa-building" style="color: #007bff; margin-right: 5px;"></i>Gmz Hellas</p>
-                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+30 213 045 3355 <br><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+30 210 418 2547</p>
-                                    <p>Person In Charge: <br> Mr Manos Tzimpimpakis</p>
-                                </div>
-                            </div>
-                            <div class="footer-contact-item">
-                                <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>
-                                <div class="footer-contact-content">
-                                    <p class="footer-highlight">Malta Office:</p>
-                                    <p><i class="fas fa-building" style="color: #007bff; margin-right: 5px;"></i>PB Group</p>
-                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+35 679 566 566</p>
-                                    <p>Person In Charge: <br> Mr Ramon Azzopardi <br> Mr Sandro Varrazo</p> <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+356 99 211 137</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-social">
-                    <a href="#" class="social-icon"><img src="images/instagram.png" alt="Instagram"></a>
-                    <a href="#" class="social-icon"><img src="images/facebook.png" alt="Facebook"></a>
-                    <a href="#" class="social-icon"><img src="images/youtube.png" alt="YouTube"></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html> 
+<!DOCTYPE html> <html lang="tr"> <head>     <meta charset="UTF-8">     <meta name="viewport" content="width=device-width, initial-scale=1.0">     <title>TPC - Activities</title>     <link rel="preconnect" href="https://fonts.googleapis.com">     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">     <link rel="stylesheet" href="css/style.css">     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">     <link rel="icon" href="images/logo.png" type="image/png"> <style>     .navbar {         position: fixed;         top: 0;         left: 0;         right: 0;         width: 100%;         z-index: 1000;         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);         background-color: #ffffff;         transition: all 0.3s ease;     }          .navbar-scrolled {         background-color: #007bff;     }          .navbar-scrolled .nav-link,     .navbar-scrolled .hamburger-btn i {         color: #ffffff;     }          .navbar .nav-link {         color: #333;         transition: all 0.3s ease;     }          .hamburger-btn i {         color: #333;         transition: all 0.3s ease;     }          body {         padding-top: 70px;     } </style> </head> <body>     <!-- Navbar -->     <nav class="navbar">         <div class="logo">             <a href="index.html">                 <img src="images/logo-yatay.png" alt="Logo">             </a>         </div>         <div class="nav-links">             <div class="language-flags">                 <a href="faaliyetler.html" class="flag-link" data-lang="tr"><img src="images/tr-flag.png" alt="Türkçe" class="flag-img"></a>                 <a href="activities.html" class="flag-link" data-lang="en"><img src="images/en-flag.png" alt="English" class="flag-img"></a>             </div>            <a href="mc1-product.html" class="nav-link">Products</a>             <a href="gallery.html" class="nav-link">Gallery</a>             <a href="contact.html" class="nav-link">Contact</a>             <button class="hamburger-btn" id="hamburgerBtn">                 <i class="fas fa-bars"></i>             </button>         </div>     </nav>      <!-- Pop-up Menu -->     <div class="popup-menu" id="popupMenu">         <div class="popup-content">             <button class="close-btn" id="closeBtn">                 <i class="fas fa-times"></i>             </button>             <div class="menu-items">                 <a href="index.html" class="menu-item">Home</a>                 <a href="about-us.html" class="menu-item">About TPC Terminal</a>                 <a href="activities.html" class="menu-item">Fields of Activity</a>                <a href="mc1-product.html" class="menu-item">Products</a>                 <a href="gallery.html" class="menu-item">Gallery</a>                 <a href="contact.html" class="menu-item">Contact</a>             </div>             <div class="popup-language-flags">                 <a href="faaliyetler.html" class="flag-link" data-lang="tr"><img src="images/tr-flag.png" alt="Türkçe" class="flag-img"> Türkçe</a>                 <a href="activities.html" class="flag-link" data-lang="en"><img src="images/en-flag.png" alt="English" class="flag-img"> English</a>             </div>             <div class="social-links">                 <a href="#" class="social-link"><img src="images/instagram.png" alt="Instagram"></a>                 <a href="#" class="social-link"><img src="images/facebook.png" alt="Facebook"></a>                 <a href="#" class="social-link"><img src="images/youtube.png" alt="YouTube"></a>             </div>         </div>     </div>      <!-- Activities Section -->     <section class="hero-section about-section">         <div class="container">             <div class="faaliyet-wrapper">                 <div class="faaliyet-header">                     <h2>Fields of Activity</h2>                 </div>                                  <div class="faaliyet-grid">                     <div class="faaliyet-item">                         <img src="images/depolama.jpeg" alt="Storage Services">                         <div class="faaliyet-item-overlay">                             <h3>Storage Services</h3>                         </div>                         <a href="storage-services.html" class="stretched-link"></a>                     </div>                                          <div class="faaliyet-item">                         <img src="images/petrol.jpeg" alt="Oil and Petroleum Products Trade">                         <div class="faaliyet-item-overlay">                             <h3>Oil and Petroleum Products Trade</h3>                         </div>                         <a href="oil-trade.html" class="stretched-link"></a>                     </div>                                          <div class="faaliyet-item">                         <img src="images/akaryakit.jpeg" alt="Fuel Transportation">                         <div class="faaliyet-item-overlay">                             <h3>Fuel Transportation</h3>                         </div>                         <a href="fuel-transportation.html" class="stretched-link"></a>                     </div>                                          <div class="faaliyet-item">                         <img src="images/ship2.jpg" alt="Port and Logistics Services">                         <div class="faaliyet-item-overlay">                             <h3>Port and Logistics Services</h3>                         </div>                         <a href="port-logistics.html" class="stretched-link"></a>                     </div>                 </div>             </div>         </div>     </section>      <!-- Footer -->     <footer class="footer">         <div class="container">             <div class="footer-content">                 <div class="footer-column footer-links-column">                     <div class="footer-links-section">                         <h3>Pages</h3>                         <ul class="footer-links">                             <li><i class="fas fa-angle-right"></i> <a href="index.html">Home</a></li>                             <li><i class="fas fa-angle-right"></i> <a href="about-us.html">About TPC Terminal</a></li>                             <li><i class="fas fa-angle-right"></i> <a href="activities.html">TPC Terminal Activity</a></li>                             <li><i class="fas fa-angle-right"></i> <a href="gallery.html">Gallery</a></li>                             <li><i class="fas fa-angle-right"></i> <a href="contact.html">Contact</a></li>  ,                             <li><i class="fas fa-angle-right"></i> <a href="mc1-product.html">Products</a></li>                         </ul>                     </div>                                          <div class="footer-links-section">                         <h3>Fields of Activity</h3>                         <ul class="footer-links">                             <li><i class="fas fa-angle-right"></i> <a href="storage-services.html">Storage Services</a></li>                             <li><i class="fas fa-angle-right"></i> <a href="oil-trade.html">Oil and Petroleum Products Trade</a></li>                             <li><i class="fas fa-angle-right"></i> <a href="fuel-transportation.html">Fuel Transportation</a></li>                             <li><i class="fas fa-angle-right"></i> <a href="port-logistics.html">Port and Logistics Services</a></li>                             <li><i class="fas fa-angle-right"></i> <a href="facility-info.html">About the Facility</a></li>                         </ul>                     </div>                 </div>                                  <div class="footer-column footer-contact-column">                     <h3>Contact Information</h3>                     <div class="footer-contact-grid">                         <div class="footer-contact-left">                             <div class="footer-contact-item">                                 <span class="footer-icon"><i class="fas fa-envelope" style="color: #007bff;"></i></span>                                 <div class="footer-contact-content">                                     <p class="footer-highlight">Email:</p>                                     <p><i class="fas fa-envelope" style="color: #007bff; margin-right: 5px;"></i>info@tpc.org.tr</p>                                 </div>                             </div>                             <div class="footer-contact-item">                                 <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>                                 <div class="footer-contact-content">                                     <p class="footer-highlight">Turkey Office:</p>                                     <p><i class="fas fa-map-marker-alt" style="color: #007bff; margin-right: 5px;"></i>Istanbul, Turkey</p>                                     <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+90 212 892 5962</p>                                 </div>                             </div>                             <div class="footer-contact-item">                                 <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>                                 <div class="footer-contact-content">                                     <p class="footer-highlight">Libya Office:</p>                                     <p><i class="fas fa-building" style="color: #007bff; margin-right: 5px;"></i>Al Buraq Holding / Marketing Dep.</p>                                     <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+218 91 217 3334</p>                                     <p>Person In Charge: <br> Mr Ala Kilani</p>                                     <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+218 91 218 8625</p>                                     <p>Person In Charge: <br> Mr Abugela K Elmelit</p>                                     <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+218 91 212 0552</p>                                 </div>                             </div>                             <div class="footer-contact-item">                                 <span class="footer-icon"><i class="fas fa-anchor"></i></span>                                 <div class="footer-contact-content">                                     <a href="https://www.lpclibya.com/en/?page_id=184" target="_blank" class="port-info-link">Libya Port Information <i class="fas fa-external-link-alt"></i></a>                                 </div>                             </div>                         </div>                         <div class="footer-contact-right">                             <div class="footer-contact-item">                                 <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>                                 <div class="footer-contact-content">                                     <p class="footer-highlight">Greece Office:</p>                                     <p><i class="fas fa-building" style="color: #007bff; margin-right: 5px;"></i>Gmz Hellas</p>                                     <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+30 213 045 3355 <br><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+30 210 418 2547</p>                                     <p>Person In Charge: <br> Mr Manos Tzimpimpakis</p>                                 </div>                             </div>                             <div class="footer-contact-item">                                 <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>                                 <div class="footer-contact-content">                                     <p class="footer-highlight">Malta Office:</p>                                     <p><i class="fas fa-building" style="color: #007bff; margin-right: 5px;"></i>PB Group</p>                                     <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+35 679 566 566</p>                                     <p>Person In Charge: <br> Mr Ramon Azzopardi <br> Mr Sandro Varrazo</p> <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+356 99 211 137</p>                                 </div>                             </div>                         </div>                     </div>                 </div>             </div>                          <div class="footer-bottom">                 <div class="footer-social">                     <a href="#" class="social-icon"><img src="images/instagram.png" alt="Instagram"></a>                     <a href="#" class="social-icon"><img src="images/facebook.png" alt="Facebook"></a>                     <a href="#" class="social-icon"><img src="images/youtube.png" alt="YouTube"></a>                 </div>             </div>         </div>     </footer>      <script src="js/script.js"></script>     <script>     // Navbar scroll effect     window.addEventListener('scroll', function() {         const navbar = document.querySelector('.navbar');         if (window.scrollY > 50) {             navbar.classList.add('navbar-scrolled');         } else {             navbar.classList.remove('navbar-scrolled');         }     }); </script> </body> </html>   
