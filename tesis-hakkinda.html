@@ -23,12 +23,12 @@
          transition: all 0.3s ease;
      }
      
-     .navbar-scrolled {
+     .navbar.scrolled {
          background-color: #007bff;
      }
      
-     .navbar-scrolled .nav-link,
-     .navbar-scrolled .hamburger-btn i {
+     .navbar.scrolled .nav-link,
+     .navbar.scrolled .hamburger-btn i {
          color: #ffffff;
      }
      
@@ -37,7 +37,7 @@
          transition: all 0.3s ease;
      }
      
-     .hamburger-btn i {
+     .navbar .hamburger-btn i {
          color: #333;
          transition: all 0.3s ease;
      }
@@ -217,9 +217,9 @@
      window.addEventListener('scroll', function() {
          const navbar = document.querySelector('.navbar');
          if (window.scrollY > 50) {
-             navbar.classList.add('navbar-scrolled');
+             navbar.classList.add('scrolled');
          } else {
-             navbar.classList.remove('navbar-scrolled');
+             navbar.classList.remove('scrolled');
          }
      });
  </script>
@@ -227,3 +227,7 @@
  </html> 
  
  
+
+
+
+

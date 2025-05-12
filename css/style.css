@@ -40,6 +40,11 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.navbar.scrolled .nav-link,
+.navbar.scrolled .hamburger-btn i {
+    color: var(--primary-color);
+}
+
 .logo img {
     height: 60px;
 }
@@ -70,12 +75,18 @@ body {
 }
 
 .hamburger-btn {
-    background: none;
+    background: transparent;
     border: none;
-    font-size: 1.5rem;
     cursor: pointer;
-    color: var(--light-color);
-    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.hamburger-btn i {
+    font-size: 1.5rem;
+    color: inherit;
 }
 
 /* Pop-up Menu Styles */
@@ -2148,18 +2159,14 @@ body {
 }
 
 /* Navbar renk düzeltmesi */
-.navbar.scrolled .nav-link {
+.navbar.scrolled .nav-link,
+.navbar.scrolled .hamburger-btn i {
     color: var(--primary-color);
 }
 
-/* Navbar için gerekli düzeltmeler */
-.navbar {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-}
-
-.navbar .nav-link {
-    color: var(--light-color);
+.navbar.scrolled .nav-link,
+.navbar.scrolled .hamburger-btn i {
+    color: #ffffff !important;
 }
 
 /* Faaliyet Sayfaları için Service Content Stili */
@@ -2476,4 +2483,10 @@ body {
         max-width: 98vw;
         padding: 1rem 0.5rem;
     }
+}
+
+/* Navigation Styles */
+.nav-links .nav-link,
+.nav-links .hamburger-btn i {
+    color: inherit;
 } 
