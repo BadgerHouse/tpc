@@ -17,15 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Sayfa kaydırıldığında navbar'ın arkaplan rengini değiştir
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
     // Dil değiştirme işlevselliği
     const flagLinks = document.querySelectorAll('.flag-link');
 

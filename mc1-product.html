@@ -239,28 +239,19 @@
              width: 100%;
              z-index: 1000;
              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-             background-color: #ffffff;
+             background-color: #0c1c38; /* Lacivert */
              transition: all 0.3s ease;
          }
          
-         .navbar-scrolled {
-             background-color: #007bff;
-         }
-         
-         .navbar-scrolled .nav-link,
-         .navbar-scrolled .hamburger-btn i {
-             color: #ffffff;
-         }
-         
          .navbar .nav-link {
-             color: #333;
+             color: #ffffff;
              transition: all 0.3s ease;
          }
          
          .navbar .hamburger-btn i {
-    color: #333;
-    transition: all 0.3s ease;
-}
+             color: #ffffff;
+             transition: all 0.3s ease;
+         }
          
          body {
              padding-top: 70px;
@@ -502,21 +493,12 @@
      </footer>
  
      <script src="js/script.js"></script>
-     <script>
-         // Navbar scroll effect
-         window.addEventListener('scroll', function() {
-             const navbar = document.querySelector('.navbar');
-             if (window.scrollY > 50) {
-                 navbar.classList.add('navbar-scrolled');
-             } else {
-                 navbar.classList.remove('navbar-scrolled');
-             }
-         });
-     </script>
+     
  </body>
  </html> 
  
  
+
 
 
 
