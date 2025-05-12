@@ -1,0 +1,21 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+# Ana sayfayı belirt
+DirectoryIndex index.html anasayfa.html
+
+# Dosya veya dizin varsa direkt erişim ver
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Özel yönlendirmeler
+# mc1-urun'den urunler'e yönlendirme
+RewriteRule ^mc1-urun$ urunler.html [L,R=301]
+
+# mc1-product'dan products'a yönlendirme
+RewriteRule ^mc1-product$ products.html [L,R=301]
+
+# .html uzantısı olmayan istekleri .html'e yönlendir - basit kural
+RewriteRule ^([^\.]+)$ $1.html [NC,L] 
