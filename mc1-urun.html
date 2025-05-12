@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPC - MC1 Bitümlü Baz Kat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <style>
+        .product-section {
+            padding: 130px 0 80px 0;
+            background-color: #f5f7fa;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .product-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .product-header h1 {
+            font-size: 2.5rem;
+            color: #162b5e;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .product-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .product-content {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            align-items: flex-start;
+        }
+        
+        .product-image {
+            flex: 1;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .main-product-img {
+            width: 100%;
+            height: 0;
+            padding-bottom: 75%; /* 4:3 aspect ratio */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .main-product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .main-product-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .additional-images {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .additional-img {
+            width: 100%;
+            height: 0;
+            padding-bottom: 75%; /* 4:3 aspect ratio */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .additional-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .additional-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .product-details {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .product-details h2 {
+            font-size: 1.8rem;
+            color: #162b5e;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .product-details p {
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .key-features {
+            margin-top: 20px;
+        }
+        
+        .key-features h3 {
+            font-size: 1.4rem;
+            color: #162b5e;
+            margin-bottom: 15px;
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            color: #444;
+        }
+        
+        .feature-list li:before {
+            content: "\f058";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: #007bff;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .specs-table th {
+            background-color: #162b5e;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .specs-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .specs-table tr:hover {
+            background-color: #e6f2ff;
+        }
+        
+        @media (max-width: 992px) {
+            .product-content {
+                flex-direction: column;
+            }
+            
+            .product-image {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .product-header h1 {
+                font-size: 2rem;
+            }
+            
+            .product-details h2 {
+                font-size: 1.5rem;
+            }
+            
+            .specs-table th, .specs-table td {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar .nav-link {
+            color: #007bff;
+        }
+        
+        .hamburger-btn i {
+            color: #007bff;
+        }
+        
+        body {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="anasayfa.html">
+                <img src="images/logo-yatay.png" alt="Logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <div class="language-flags">
+                <a href="mc1-urun.html" class="flag-link" data-lang="tr"><img src="images/tr-flag.png" alt="Türkçe" class="flag-img"></a>
+                <a href="mc1-product.html" class="flag-link" data-lang="en"><img src="images/en-flag.png" alt="English" class="flag-img"></a>
+            </div>
+            <a href="galeri.html" class="nav-link">Galeri</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Pop-up Menu -->
+    <div class="popup-menu" id="popupMenu">
+        <div class="popup-content">
+            <button class="close-btn" id="closeBtn">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="menu-items">
+                <a href="anasayfa.html" class="menu-item">Anasayfa</a>
+                <a href="hakkımızda.html" class="menu-item">Hakkımızda</a>
+                <a href="faaliyetler.html" class="menu-item">Faaliyet Alanları</a>
+                <a href="galeri.html" class="menu-item">Galeri</a>
+                <a href="iletisim.html" class="menu-item">İletişim</a>
+            </div>
+            <div class="popup-language-flags">
+                <a href="mc1-urun.html" class="flag-link" data-lang="tr"><img src="images/tr-flag.png" alt="Türkçe" class="flag-img"> Türkçe</a>
+                <a href="mc1-product.html" class="flag-link" data-lang="en"><img src="images/en-flag.png" alt="English" class="flag-img"> English</a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="#" class="social-link"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#" class="social-link"><img src="images/youtube.png" alt="YouTube"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Section -->
+    <section class="product-section">
+        <div class="product-container">
+            <div class="product-header">
+                <h1>MC1 Bitümlü Baz Kat</h1>
+                <p>Yüksek performanslı su yalıtımı ve asfalt kaplama çözümü</p>
+            </div>
+            
+            <div class="product-content">
+                <div class="product-image">
+                    <div class="main-product-img">
+                        <img src="images/product.jpg" alt="MC1 Bitümlü Baz Kat">
+                    </div>
+                    <div class="additional-images">
+                        <div class="additional-img">
+                            <img src="images/product1.jpg" alt="MC1 Bitümlü Baz Kat - Görünüm 1">
+                        </div>
+                        <div class="additional-img">
+                            <img src="images/product2.jpg" alt="MC1 Bitümlü Baz Kat - Görünüm 2">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-details">
+                    <div>
+                        <h2>Ürün Açıklaması</h2>
+                        <p>TPC markası altında Libya Menşeili Bitümlü Astar ürünü Libya'dan dünyanın dört bir yanına ihraç edilmektedir.</p>
+                        <p>MC1 Bitümlü Baz Kat, orta kürlenen bir kesme asfalttır. Bitüm ve kerosenden (çözücü olarak) oluşan bir bitümlü ortam, emdirme tabakası olarak adlandırılır. Kerosen oranı %40 ve bitüm oranı %60'tır.</p>
+                    </div>
+                    
+                    <div class="key-features">
+                        <h3>MC1 Bitümlü Baz Katın Faydaları</h3>
+                        <ul class="feature-list">
+                            <li>Asfalt tabakasını çakıl taban tabakasına veya taban tabakasına bağlamak için kullanılır</li>
+                            <li>Taban tabakalarındaki nemi tutmak için çalışır</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>Teknik Özellikler</h3>
+                        <table class="specs-table">
+                            <tr>
+                                <th>Özellik</th>
+                                <th>Değer</th>
+                            </tr>
+                            <tr>
+                                <td>Birincil katman püskürtme oranı</td>
+                                <td>0,5-1,75 litre/m²</td>
+                            </tr>
+                            <tr>
+                                <td>Püskürtme sıcaklığı</td>
+                                <td>50-80°C</td>
+                            </tr>
+                            <tr>
+                                <td>İzin verilen minimum püskürtme sıcaklığı</td>
+                                <td>15°C</td>
+                            </tr>
+                            <tr>
+                                <td>Kürlenme süresi</td>
+                                <td>Püskürtmeden sonra en az 48 saat ve en fazla 7 gün</td>
+                            </tr>
+                            <tr>
+                                <td>Kerosen oranı</td>
+                                <td>%40</td>
+                            </tr>
+                            <tr>
+                                <td>Bitüm oranı</td>
+                                <td>%60</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div>
+                        <h3>Uygulama Bilgileri</h3>
+                        <p>MC1 tabakası püskürtüldükten sonra en az 48 saat ve en fazla 7 gün boyunca kürlenmeye bırakılmalıdır. Bu süreden sonra asfalt uygulanmazsa, müteahhit, bir sonraki katmanla kaplanana kadar baz katı muhafaza edecektir.</p>
+                        <p>MC1'i emme olasılığı en yüksek olan malzemeler, daha yumuşak oldukları ve daha büyük bir yüzey alanına sahip oldukları için MC1 ile daha emprenye edilemez hale gelen A2-4'tür.</p>
+                        <p>Emprenye tabakası veya yapıştırıcı tabaka için püskürtme oranının (litre/m²) veya (kg/m²) nasıl belirleneceği: Bir metal levha, 1 x 1 metrelik bir branda örtüsü veya bilinen bir alana sahip herhangi bir başka yüzey, ne varsa, kullanılır. Püskürtme aracı bunun üzerinden geçer ve püskürtmeden önce ve sonra tartılır. Daha sonra püskürtme oranı belirlenir. Oran, teknik özelliklerden düşükse, araç püskürtme sırasında hızını azaltabilir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-links-column">
+                    <div class="footer-links-section">
+                        <h3>Sayfalar</h3>
+                        <ul class="footer-links">
+                            <li><i class="fas fa-angle-right"></i> <a href="anasayfa.html">Anasayfa</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="hakkımızda.html">Hakkımızda</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="faaliyetler.html">Faaliyet Alanları</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="galeri.html">Galeri</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="iletisim.html">İletişim</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="mc1-urun.html">MC1 Bitümlü Baz Kat</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-section">
+                        <h3>Faaliyet Alanları</h3>
+                        <ul class="footer-links">
+                            <li><i class="fas fa-angle-right"></i> <a href="depolama.html">Depolama Hizmetleri</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="petrol-ticareti.html">Petrol ve Petrol Ürünleri Ticareti</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="akaryakit-tasimaciligi.html">Akaryakıt Taşımacılığı</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="lojistik.html">Liman ve Lojistik Hizmetleri</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="tesis-hakkinda.html">Tesis Hakkında</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-column footer-contact-column">
+                    <h3>İletişim Bilgileri</h3>
+                    <div class="footer-contact-grid">
+                        <div class="footer-contact-left">
+                            <div class="footer-contact-item">
+                                <span class="footer-icon"><i class="fas fa-envelope" style="color: #007bff;"></i></span>
+                                <div class="footer-contact-content">
+                                    <p class="footer-highlight">Email:</p>
+                                    <p><i class="fas fa-envelope" style="color: #007bff; margin-right: 5px;"></i>info@tpc.org.tr</p>
+                                </div>
+                            </div>
+                            <div class="footer-contact-item">
+                                <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>
+                                <div class="footer-contact-content">
+                                    <p class="footer-highlight">Türkiye Ofisi:</p>
+                                    <p><i class="fas fa-map-marker-alt" style="color: #007bff; margin-right: 5px;"></i>Istanbul, Turkey</p>
+                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+90 212 892 5962</p>
+                                </div>
+                            </div>
+                            <div class="footer-contact-item">
+                                <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>
+                                <div class="footer-contact-content">
+                                    <p class="footer-highlight">Libya Ofisi:</p>
+                                    <p><i class="fas fa-building" style="color: #007bff; margin-right: 5px;"></i>Al Buraq Holding / Satış Dep.</p>
+                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+218 91 217 3334</p>
+                                    <p>Yetkili Kişi: <br> Mr Ala Kilani</p>
+                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+218 91 218 8625</p>
+                                    <p>Yetkili Kişi: <br> Mr Abugela K Elmelit</p>
+                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+218 91 212 0552</p>
+                                </div>
+                            </div>
+                            <div class="footer-contact-item">
+                                <span class="footer-icon"><i class="fas fa-anchor"></i></span>
+                                <div class="footer-contact-content">
+                                    <a href="https://www.lpclibya.com/en/?page_id=184" target="_blank" class="port-info-link">Libya Liman Bilgileri<i class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-contact-right">
+                            <div class="footer-contact-item">
+                                <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>
+                                <div class="footer-contact-content">
+                                    <p class="footer-highlight">Greece Office:</p>
+                                    <p><i class="fas fa-building" style="color: #007bff; margin-right: 5px;"></i>Gmz Hellas</p>
+                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+30 213 045 3355 <br><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+30 210 418 2547</p>
+                                    <p>Yetkili Kişi: <br> Mr Manos Tzimpimpakis</p>
+                                </div>
+                            </div>
+                            <div class="footer-contact-item">
+                                <span class="footer-icon"><i class="fas fa-map-marker-alt" style="color: #007bff;"></i></span>
+                                <div class="footer-contact-content">
+                                    <p class="footer-highlight">Malta Office:</p>
+                                    <p><i class="fas fa-building" style="color: #007bff; margin-right: 5px;"></i>PB Group</p>
+                                    <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+35 679 566 566</p>
+                                    <p>Yetkili Kişi: <br> Mr Ramon Azzopardi <br> Mr Sandro Varrazo</p> <p><i class="fas fa-phone" style="color: #007bff; margin-right: 5px;"></i>+356 99 211 137</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><img src="images/instagram.png" alt="Instagram"></a>
+                    <a href="#" class="social-icon"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="#" class="social-icon"><img src="images/youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html> 

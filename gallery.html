@@ -13,7 +13,7 @@
     <style>
         .simple-gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(2, 1fr);
             gap: 20px;
             margin-top: 40px;
@@ -44,17 +44,24 @@
             transform: scale(1.05);
         }
         
+        @media (max-width: 992px) {
+            .simple-gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
             .simple-gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
             }
         }
         
         @media (max-width: 480px) {
             .simple-gallery-grid {
                 grid-template-columns: 1fr;
-                grid-template-rows: repeat(6, 1fr);
+                grid-template-rows: repeat(8, 1fr);
             }
         }
     </style>
@@ -132,6 +139,12 @@
                 <div class="gallery-item">
                     <img src="images/ship2.jpg" alt="Petroleum Processing Units">
                 </div>
+                <div class="gallery-item">
+                    <img src="images/gallery1.jpg" alt="Gallery View 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery2.jpg" alt="Gallery View 2">
+                </div>
             </div>
         </div>
     </section>
@@ -149,6 +162,7 @@
                             <li><i class="fas fa-angle-right"></i> <a href="activities.html">TPC Terminal Activity</a></li>
                             <li><i class="fas fa-angle-right"></i> <a href="gallery.html">Gallery</a></li>
                             <li><i class="fas fa-angle-right"></i> <a href="contact.html">Contact</a></li>
+                            <li><i class="fas fa-angle-right"></i> <a href="mc1-product.html">Products</a></li>
                         </ul>
                     </div>
                     
